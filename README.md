@@ -1,3 +1,5 @@
+![Fahrschule StreetMasters Logo](./public/logo.png)
+
 # Driving School
 
 Nextjs / styled-components
