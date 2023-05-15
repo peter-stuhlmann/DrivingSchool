@@ -1,95 +1,45 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
 
-export default function Home() {
+import BannerImageComponent from './components/Banner';
+import ContactComponent from './components/Contact';
+import ServicesComponent from './components/Services';
+import TeamComponent from './components/Team';
+
+import { bannerImages } from './data';
+
+export default function Home(): JSX.Element {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main>
+      <BannerImageComponent
+        id={bannerImages[0].id}
+        imgNameM={bannerImages[0].imgNameM}
+        imgNameL={bannerImages[0].imgNameL}
+        imgDescription={bannerImages[0].imgDescription}
+        captionOpacity={bannerImages[0].captionOpacity}
+        captionText={bannerImages[0].captionText}
+        priority
+      />
+      <ServicesComponent />
+      <BannerImageComponent
+        imgNameM={bannerImages[1].imgNameM}
+        imgNameL={bannerImages[1].imgNameL}
+        imgDescription={bannerImages[1].imgDescription}
+        captionText={bannerImages[1].captionText}
+      />
+      <TeamComponent />
+      <BannerImageComponent
+        imgNameM={bannerImages[2].imgNameM}
+        imgNameL={bannerImages[2].imgNameL}
+        imgDescription={bannerImages[2].imgDescription}
+        captionText={bannerImages[2].captionText}
+      />
+      <ContactComponent />
+      <BannerImageComponent
+        imgNameM={bannerImages[3].imgNameM}
+        imgNameL={bannerImages[3].imgNameL}
+        imgDescription={bannerImages[3].imgDescription}
+        captionText={bannerImages[3].captionText}
+      />
     </main>
-  )
+  );
 }
